@@ -1,5 +1,5 @@
 # Use an official OpenJDK runtime as a parent image
-FROM maven:3.9.7-openjdk:22 AS build
+FROM maven:3.9.7-openjdk-22 AS build
 COPY . .
 RUN mvnw clean package -DskipTests
 FROM openjdk:17.0.1-jdk-slim
