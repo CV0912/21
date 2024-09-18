@@ -1,7 +1,14 @@
 # Use an official OpenJDK runtime as a parent image
-FROM maven:3.8.5-openjdk-17 AS build
-COPY . .
-FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/21.jar 21.jar
+FROM openjdk:17-jdk-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the JAR file from the target folder to the container
+COPY target/21.jar /app/app.jar
+
+# Expose the port your Spring Boot application runs on
 EXPOSE 8080
-ENTRYPOINT [ "java","-jar","21.jar" ]
+
+# Command to run the JAR file
+ENTRYPOINT ["java", "-jar", "app.jar"]
