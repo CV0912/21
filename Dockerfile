@@ -1,5 +1,5 @@
 # Use an official OpenJDK runtime as a parent image
-FROM maven:3.3.3-openjdk-22 AS build
+FROM maven:3.3.3-openjdk-17 AS build
 COPY . .
 RUN ./mvnw clean package
 FROM openjdk:17.0.1-jdk-slim
