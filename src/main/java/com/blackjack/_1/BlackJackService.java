@@ -132,7 +132,7 @@ public String determineWinner() {
         int playerTotal = hands.get(i).getTotal();  // Use getTotal() to get player's total
         int dealerTotal = dealer.getTotal();        // Use getTotal() to get dealer's total
 
-        if (dealerTotal > 21 && playerTotal<21) {
+        if (dealerTotal > 21 && playerTotal<=21) {
             result.append("Dealer busts! Player ").append(i + 1).append(" wins.\n");
             updateBalance(true);
         } else if (playerTotal > 21) {
