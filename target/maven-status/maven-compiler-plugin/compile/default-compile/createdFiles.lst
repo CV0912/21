@@ -1,10 +1,10 @@
 com\blackjack\_1\models\Suit.class
-com\blackjack\_1\Application.class
-com\blackjack\_1\models\Hand.class
 com\blackjack\_1\BlackJackController.class
 com\blackjack\_1\models\Card.class
 com\blackjack\_1\FrontendController.class
 com\blackjack\_1\models\Rank.class
 com\blackjack\_1\BlackJackService.class
 com\blackjack\_1\models\Deck.class
+com\blackjack\_1\Application.class
+com\blackjack\_1\models\Hand.class
 com\blackjack\_1\BlackJackController$GlobalExceptionHandler.class
