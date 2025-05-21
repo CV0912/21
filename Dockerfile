@@ -5,7 +5,7 @@ FROM openjdk:22-ea-1-jdk
 WORKDIR /app
 
 # Copy the JAR file from the target folder to the container
-COPY target/21.jar /app/app.jar
+COPY target/21-0.0.1-SNAPSHOT.jar /app/app.jar
 
 # Expose the port your Spring Boot application runs on
 EXPOSE 8080
