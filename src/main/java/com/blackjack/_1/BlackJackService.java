@@ -27,7 +27,7 @@ public class BlackJackService {
     }
     public void NewGame()
 {
-    deck = new Deck();
+    deck = new Deck()
     deck.populate(1);
     deck.shuffle();
     hands = new ArrayList<>();
