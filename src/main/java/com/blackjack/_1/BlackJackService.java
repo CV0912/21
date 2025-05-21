@@ -12,7 +12,7 @@ public class BlackJackService {
     private Hand dealer;
     private int bal;
     private int currentbet;
-
+    private boolean flip;
     public BlackJackService() {
         startNewGame();
     }
@@ -62,6 +62,11 @@ public class BlackJackService {
     public String getDealerHand(boolean revealAll) {
         if (!revealAll) {
             dealer.cards.get(0).flipCard();  // Flip the first card down (hide it)
+            flip = true;
+        }
+        else
+        {
+            flip = false;
         }
         return dealer.cards.stream()         // Use the cards field of the dealer's hand
             .map(this::getCardImageURL)      // Convert each Card to its image URL
@@ -91,7 +96,12 @@ public class BlackJackService {
     }
 }
 public int getDealerTotal() {
+    if(flip == false)
+    {
     return dealer.getTotal();  // Use the Hand class method getTotal() to return dealer's total
+    }
+    else
+    return 0+dealer.cards.get(0).getRank();
 }
 
 public int getPlayerTotal(int playerIndex) {
